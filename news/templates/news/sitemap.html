@@ -1,0 +1,49 @@
+{% extends 'news/base.html' %} {% block content %}
+
+<section class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'home' %}">Главная</a></li>
+          <li>{{title}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="col-md-12">
+    <div class="row">
+      <h3 class="news_title"><span>Карта сайта</span></h3>
+    </div>
+    <div class="col-md-11 offset-md-1">
+      <ul class="topmenumap tree">
+        <li class="topmenu_itemmap"><a href="{% url 'home' %}">Главная</a></li>
+        <li class="topmenu_itemmap"><a href="{% url 'news' %}">Новости</a></li>
+
+        <li class="topmenumap_item">
+          <a href="{% url 'about' %}" class="topmenumap_down">О компании </a>
+          <ul class="topmenumap_submenu down">
+            <li><a href="{% url 'about' %}">Общая информация</a></li>
+            <li><a href="{% url 'director' %}">Руководитель</a></li>
+            <li><a href="{% url 'requisites' %}">Реквизиты</a></li>
+          </ul>
+        </li>
+
+        <li class="topmenumap_item">
+          <a href="{% url 'consumerinfo' %}">Информация для потребителей</a>
+        </li>
+        <li class="topmenumap_item">
+          <a href="{% url 'tariffs' %}">Тарифы</a>
+        </li>
+        <li class="topmenumap_item">
+          <a href="{% url 'contacts' %}">Контакты</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

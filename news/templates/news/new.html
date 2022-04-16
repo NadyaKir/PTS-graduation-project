@@ -1,0 +1,44 @@
+{% extends 'news/base.html' %} 
+
+
+{% block content %}
+  <section class="breadcrumbs">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+              <li><a href="{% url 'home' %}">Главная</a></li>
+              <li><a href="{% url 'news' %}">Новости</a></li>
+              <li>{{ title }}</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="news">
+      <div class="container">
+        <div class="row">
+           <div class="col-md-12 ">
+            <div class="news_main_header">
+              <h1 class="news_title"><span>{{title}}</span></h1>
+            </div>
+           </div>
+          <div class="col-md-12">
+            <div class="news_item">
+              <p class="news_date">{{new.time_create}}</p>
+              <div class="news_desr">
+                {% if new.photo %}
+                <img class="new_img" src="{{new.photo.url}}" alt="Фото новости">
+                {% endif %}
+                 <p>{{new.content|safe}}</p>
+              </div>
+              <script src="https://yastatic.net/share2/share.js"></script>
+<div class="ya-share2" data-curtain data-services="vkontakte,facebook,odnoklassniki,twitter,moimir"></div>
+              <a class="news_btn news_btn_back" href="{% url 'news' %}">Назад</a>
+            </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

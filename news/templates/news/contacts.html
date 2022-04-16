@@ -1,0 +1,128 @@
+{% extends 'news/base.html' %} 
+
+
+{% block content %} 
+
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="breadcrumb">
+              <li><a href="{% url 'home' %}">Главная</a></li>
+              <li>{{title}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <div class="map">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="news_title"><span>Контактная информация</span></h1>
+            </div>
+
+            <div class="col-md-12">
+              <div class="map_descr">
+                На данной странице можно ознакомиться с адресом, временем работы и контактной информацией
+                ТОО "Павлодарские тепловые сети". 
+                <br>
+                <br>
+                При возникновении вопросов относительно начислений в квитанциях и перерасчета потребителям необходимо обратиться в контакт-центр ТОО «Павлодарэнергосбыт»  по номеру тел.:+8(7182)903-309.
+                <br>
+                <br>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="map_block">
+           <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A06ce7df5112420737b4f7e8ba326e417044241dece223143875d1e0d9eb963ba&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+          </div>
+      </div>
+      
+            <div class="col-md-8">
+                <h3 class="contacts_title"><span>Обратная связь: </span></h3>
+            <form class="form_contact contact_form" action="" method="post" novalidate="novalidate">
+              {% csrf_token %}
+              {% if success %}
+              <div class="success">
+                <strong><i class="fa fa-check" aria-hidden="true"></i> Сообщение успешно отправлено, спасибо за обращение!</strong>
+              </div>
+              {% else %}
+            <div class="row">
+            <div class="col-12">
+                          <div class="form_group">
+              {{ form.message_type }}
+            </div>
+             {% if form.message_type.errors %}
+              <div class="alert">
+                <strong>{{ form.message_type.errors }}</strong>
+              </div>
+              {% endif %}
+            <div class="form_group">
+              {{ form.message }}
+            </div>
+               {% if form.message.errors %}
+              <div class="alert">
+                <strong>{{ form.message.errors }}</strong>
+              </div>
+              {% endif %}
+            </div>
+            <div class="col-sm-6">
+              
+            <div class="form_group">
+              {{ form.name }}
+            </div>
+             {% if form.name.errors %}
+              <div class="alert">
+                <strong>{{ form.name.errors }}</strong>
+              </div>
+              {% endif %}
+            </div>
+
+            <div class="col-sm-6">
+            <div class="form_group">
+              {{ form.email }}
+            </div>
+                 {% if form.email.errors %}
+              <div class="alert">
+                <strong>{{ form.email.errors }}</strong>
+              </div>
+              {% endif %}
+            </div>
+            </div>
+
+            <div class="form_group mt-3">
+            <button type="submit" class="button button-contactForm boxed-btn">Отправить</button>
+            </div>
+             {% endif %}
+            </form>
+            </div>
+            
+
+            <div class="col-md-3 offset-md-1">
+            <div class="contacts">
+              <h3 class="contacts_title"><span>Контакты: </span></h3>
+                <address>
+                    <strong>ТОО "Павлодарские тепловые сети"</strong><br>
+                    Физический адрес: 140000, Павлодарская область, город Павлодар, ул. Камзина, 149    
+                    <br>e-mail:t.seti@pavlodarenergo.kz <br><br>
+                   
+                    <abbr title="Основной телефон (приемная)">Тел.: </abbr> +7 (7182) 57-10-58 <br>
+                    <abbr title="Телефон диспетчеркой службы">Дисп.: </abbr> +7 (7182) 60 29 21<br>
+                    <abbr title="Телефон тепловой инспекции">Тепл. инспекц.:</abbr> +7 (7182) 60 65 82<br><br>
+                    Время работы: <br>
+                    <p>Пн-Пт: 08:00 – 17:00,<br>Перерыв: 13:00 - 14:00<br>Выходные: Сб, Вс</p>
+                </address>
+              </div>
+            </div>
+            </div>
+          </div>      
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

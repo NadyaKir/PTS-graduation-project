@@ -1,0 +1,246 @@
+{% extends 'news/base.html' %} 
+
+
+{% block content %} 
+
+ <section class="promo">
+      <div class="container">
+        <div class="row">
+          <div class="inner-wrapper col-md-12">
+                <p class="promo_subheader animate__animated animate__zoomIn">
+                    Надежно и качественно
+                    <br>
+                    Обеспечиваем тепловой энергией родной город
+                </p>
+            <a class="promo_btn animate__animated animate__backInUp animate__delay-1s btn btn-primary btn-ghost btn-offset" href="{% url 'about' %}">читать подробнее</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <section class="GVS">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                <div class="news_main_header">
+                    <h1 class="news_title"><span>Отключения</span></h1>
+                  </div>
+
+                    <div class="GVS_info">
+                      <ul>
+                        <li>                 
+                          <a class="toggle_btn" id="toggle_btn1"><i class="fas fa-plus"></i> Разъяснение по причинам отсутствия ГВС в многоэтажных жилых домах Павлодара</a>
+                          <div class="toggle_box" id="toggle_box1">
+                      <table class="tariff_table table_info">
+                                                <tbody>
+                                                  <tr>
+                                                    <th>
+                                                      <p>Причина</p>
+                                                    </th>
+                                                    <th>
+                                                      <p>Пояснение</p>
+                                                    </th>
+                                                </tr>
+                                                  <tr>
+                                                    <td>
+                                                      <p>Повреждение</p>
+                                                    </td>
+                                                    <td>
+                                                      <p>Повреждения тепловых сетей выявляются в ходе проведения гидравлических испытаний. После обнаружения повреждения тепловики проводят ремонтные работы на участке (внутриквартальных или магистральных сетей).</p>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>
+                                                      <p>Капитальный ремонт</p>
+                                                    </td>
+                                                    <td>
+                                                      <p>Капитальный ремонт включает в себя полную замену изношенного участка тепломагистрали или внутриквартальной сети на новые трубы.</p>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>
+                                                      <p>Реконструкция тепловой сети</p>
+                                                    </td>
+                                                    <td>
+                                                      <p>Реконструкция тепловой сети – это модернизация тепловых сетей путем увеличения их диаметра. Эти работы позволяют увеличить нагрузку на сети и сократить количество порывов.</p>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>
+                                                      <p>Отсутствие тех.возможности</p>
+                                                    </td>
+                                                    <td>
+                                                      <p>Отсутствие технологической возможности связано с выводом в плановый ремонт оборудования Павлодарских ТЭЦ-1 и ТЭЦ-3. В данный момент проводится поэтапное подключение потребителей на сетях, где отсутствуют повреждения.</p>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>
+                                                      <p>Работы, проводимые КСК</p>
+                                                    </td>
+                                                    <td>
+                                                      <p>Этот пункт означает, что со стороны тепловиков все работы по ремонту теплосетей и подаче ГВС завершены, но горячая вода отсутствует из-за проведения работ с внутридомовым оборудованием. По вопросам завершения этих работ следует обращаться в КСК по месту жительства.</p>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                      </table>
+                          </div>
+                        </li>
+                        <li>
+                          <a class="toggle_btn" id="toggle_btn2"><i class="fas fa-question"></i> Почему на разрытом участке не проводятся работы?</a>
+                          <div class="toggle_box" id="toggle_box2">
+                    <p>Если на разрытом участке не проводятся работы, это не значит, что ремонтная бригада их не выполняет. От ТЭЦ к потребителям идут тепломагистрали, от них – внутриквартальные сети. Соответственно, сначала проводятся работы на магистралях, после – на внутриквартальных сетях, запитанных от нее. </p>
+                        </div>
+                        </li>
+                        <li>
+                          <a class="toggle_btn" id="toggle_btn3"><i class="fas fa-question"></i> Почему мой дом не указан в списке, хотя в нем нет горячей воды?</a>
+                          <div class="toggle_box" id="toggle_box3">
+                    <p>Списки обновляются ежедневно, и, если ваш дом не указан в списке, возможно информация по нему уточняется. В этом случае рекомендуем ознакомиться со сроками, указанными рядом с соседними домами. Как правило, почти все дома в определенном районе подключены к одной отопительной системе, сроки для них идентичны. </p>
+                        </div>
+                        </li>
+                        <li>
+                          <a class="toggle_btn" id="toggle_btn4"><i class="fas fa-question"></i> Почему указываются только ориентировочные сроки?</a>
+                          <div class="toggle_box" id="toggle_box4">
+                      <p>Во время испытаний, а также после них продолжают выявляться повреждения, что обусловлено, в первую очередь, высокой степенью износа тепловых сетей - 81%, в связи с чем и растет число повреждений. В ближайшие сроки тепловики определят окончательный объем работ и предоставят более точные сроки появления ГВС в домах Павлодара.</p>
+                          </div>
+                        </li>
+                      </ul>
+                  </div>
+                  
+                  <div class="form">
+                    <div class="form_header">Проверить дом на отсуствие ГВС:</div>
+                    <div class="form_block" id="form_block">
+                      <form method="GET">
+                      <label class="form_label" for="id_street">Улица: </label>
+                      <input type="text" name="street" class="form-control mb-2" id="id_street"  list="streets">
+                        
+                        <datalist id="streets">
+                          {% for r in results  %}
+                          <option value="{{ r }}">{{  r.street }}</option>
+                          {% endfor %}
+                        </datalist>
+
+                      <label class="form_label" for="id_build">Дом: </label>
+                      <input type="text" name="build" class="form-control mb-2" id="id_build">
+                      <!-- <div class="form_btn_block"> -->
+                      <button class="form_btn" id="form_btn">Найти</button>
+                        <button class="form_btn" id="form_btn">Показать все</button>
+                      <!-- </div> -->
+                      </form>
+                    </div>
+                  </div>
+
+                  <a  href="{% url 'export-excel' %}" class="excel_block"><i class="fas fa-file-excel"></i> Скачать полный список</a>
+          
+                    {% if not results_list %}
+                      <div class="searchempty_block">
+                        <p class="searchempty_descr">Информации по отсуствию ГВС нет.</p>
+                      </div>
+                    {% else %}
+                    <div class="table_block">
+                    <table class="tariff_table table_info">
+                      <tbody>
+                        <tr>
+                          <th>
+                            <p>Сетевой район</p>
+                          </th>
+                          <th>
+                            <p>Адрес</p>
+                          </th>
+                          <th>
+                            <p>Дом</p>
+                          </th>
+                          <th>
+                            <p>Дата отключения</p>
+                          </th>
+                            <th>
+                            <p>Ориентировочная дата устранения</p>
+                          </th>
+                          <th>
+                            <p>Причина</p>
+                          </th>
+                        </tr>
+                        {% for l in results_list %}
+                        <tr>
+                          <td>
+                            <p>{{ l.region }}</p>
+                          <td>
+                            <p>{{ l.street }}</p>
+                          </td>
+                          <td>
+                            <p>{{ l.build }}</p>
+                          </td>
+                          <td>
+                            <p>{{ l.date_disconnect }}</p>
+                          </td>
+                          <td>
+                            <p>{{ l.date_connect }}</p>
+                          </td>
+                          <td>
+                            <p>{{ l.reason }}</p>
+                          </td>
+                        </tr>
+                          {% empty %}
+                      <div class="searchempty_block">
+                        <p class="searchempty_descr">Ничего не найдено. Проверьте правильность ввода дома и адреса, а затем повторите попытку.</p>
+                      </div>
+                          {% endfor %}
+                      </tbody>
+                    </table>
+                    {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+
+    <section class="news">
+      <div class="container">
+        <div class="row">
+           <div class="col-md-12 ">
+            <div class="news_main_header">
+              <h1 class="news_title"><span>Последние новости</span></h1>
+            </div>
+           </div>
+          <div class="col-md-12">
+            {% if not last_news %}
+                          <div class="searchempty_block">
+                <p class="searchempty_descr">На данный момент последние новости отсуствуют.</p>
+              </div>
+            {% else %}
+            {% for l in last_news %}
+            <div class="news_item">
+              <a class="news_header" href="{{ l.get_absolute_url }}"><h5 class="news_header">{{l.title}}</h5></a>
+              <p class="news_date">{{l.time_create}}</p>
+              <div class="news_descr">
+                 {% if l.photo %}
+                  <img class="news_img" src="{{l.photo.url}}" alt="Фото новости" 
+                  onclick="javascript:document.location.href='{{ l.get_absolute_url }}'">
+            
+                {% endif %}
+                 <p class="news_text" >{{l.brief}}</p>
+              </div>
+               <a class="news_btn" href="{{ l.get_absolute_url }}">Подробнее</a>
+            </div>
+          {% endfor %}
+         {% endif %}
+            <a class="news_btn_all" href="{% url 'news' %}">Все новости</a>
+        </div>
+      </div>
+    </section>
+
+    
+     <section class="sitemap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+           <a href="{% url 'sitemap' %}" class="sitemap_link" ><i class="fas fa-sitemap"></i> Карта сайта</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

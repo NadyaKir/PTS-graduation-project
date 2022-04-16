@@ -1,0 +1,45 @@
+{% extends 'news/base.html' %} {% load static %} {% block content %}
+
+<section class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'home' %}">Главная</a></li>
+          <li>{{title}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="info">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="info_head">
+        <h3 class="news_title"><span>{{ title }}</span></h3>
+      </div>
+      <div class="col-md-12">
+        <img
+          class="info_consumer_img"
+          src="{% static 'news/images/consumerinfo.jpg' %}"
+          alt="Информационное фото о подготовке к отопительному сезону"
+        />
+        <div class="info_text">
+          Информация для потребителей по подготовке к отопительному сезону – для
+          получения ежегодного Акта технической готовности теплопотребляющих
+          установок и теплосетей потребителя к работе в осенне-зимний период
+        </div>
+
+        <a
+          class="info_consumer_btn"
+          target="_blank"
+          href="{% static 'news/downloads/forconsumers/tex.trebovanie-18-19g.g.doc' %}"
+        >
+          <i class="fas fa-download"></i> Скачать
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

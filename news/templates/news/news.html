@@ -1,0 +1,80 @@
+{% extends 'news/base.html' %} 
+{% load static %}
+
+{% block content %} 
+  <section class="breadcrumbs">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+              <li><a href="{% url 'home' %}">Главная</a></li>
+              <li>Новости</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    <section class="news">
+      <div class="container">
+        <div class="row">
+           <div class="col-md-12 ">
+            <div class="news_main_header">
+              <h1 class="news_title"><span>{{ title }}</span></h1>
+            </div>
+           </div>
+          <div class="col-md-12">
+            {% if not page_obj %}
+              <div class="searchempty_block">
+                  <img src="{% static 'news/images/empty.gif' %}" alt="Иконка лупы" class="searchempty_img">
+                <p class="searchempty_descr">На данный момент последние новости отсуствуют.</p>
+              </div>
+            {% else %}
+            {% for n in page_obj %}
+            <div class="news_item">
+               <a class="news_header" href="{{ l.get_absolute_url }}"><h5 class="news_header">{{n.title}}</h5></a>
+              <p class="news_date">{{n.time_create}}</p>
+              <div class="news_descr">
+                {% if n.photo %}
+                <img class="news_img" src="{{n.photo.url}}" alt="Фото новости"
+                onclick="javascript:document.location.href='{{ n.get_absolute_url }}'">
+                {% endif %}
+                 <p>{{n.brief}}</p>
+              </div>
+              <a class="news_btn" href="{{ n.get_absolute_url }}">Подробнее</a>
+            </div>
+             {% endfor %}
+
+            <div class="news_paginator">
+              <ul>
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}">&lt;</a></li>
+                {% endif %}
+
+                {% for p in page_obj.paginator.page_range %}
+
+                {% if page_obj.number == p %}
+                <li class="news_paginator_selected">{{ p }}</li>
+                {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                <li>
+                   <a href="?page={{ p }}">{{ p }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}">&gt;</a></li>
+                {% endif %}
+              </ul>
+                          <span class="news_paginator_current">
+              Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
+                </span>
+            </div>
+            {% endif %}
+
+        </div>
+      </div>
+    </section>
+
+
+{% endblock %}

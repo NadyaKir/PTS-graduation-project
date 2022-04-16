@@ -1,0 +1,75 @@
+{% extends 'news/base.html' %} {% block content %}
+
+<section class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'home' %}">Главная</a></li>
+          <li><a href="{% url 'about' %}">О компании</a></li>
+          <li>{{title}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="about">
+    <div class="container">
+      <div class="col-md-12">
+        <div class="about_info">
+          <h1 class="news_title"><span>{{ title }}</span></h1>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="about_descr">
+          <div class="about_req_wrapper">
+            <div class="about_req_name"><span>БИН:</span></div>
+            <div class="about_req_name">050 940 004 456, Кбе 17</div>
+          </div>
+          <div class="about_req_wrapper">
+            <div class="about_req_name"><span>Адрес:</span></div>
+            <div class="about_req_name">
+              Республика Казахстан, 140000, Павлодарская область, город
+              Павлодар, ул. Камзина, 149
+            </div>
+          </div>
+          <div class="about_req_wrapper">
+            <div class="about_req_name">
+              <span>Свидетельство о постановке на учет по НДС:</span>
+            </div>
+            <div class="about_req_name">
+              серия 45001 №0008020 выдано 14.08.13г.
+            </div>
+          </div>
+          <div class="about_req_wrapper">
+            <div class="about_req_name"><span>Банковские реквизиты:</span></div>
+            <div class="about_req_name">ДБ АО Сбербанк в г. Павлодар</div>
+          </div>
+          <div class="about_req_wrapper">
+            <div class="about_req_name"><span>БИК:</span></div>
+            <div class="about_req_name">SABRKZKA</div>
+          </div>
+          <div class="about_req_wrapper">
+            <div class="about_req_name"><span>Расчетный счет:</span></div>
+            <div class="about_req_name">KZT KZ81914072203KZ0090F</div>
+          </div>
+        </div>
+        <!-- БИН  </br>
+
+                          Адрес: Республика Казахстан, 140000, Павлодарская область, город Павлодар, ул. Камзина, 149 </br>
+                          
+                          Свидетельство о постановке на учет по НДС </br>
+                          
+                          серия 45001 №0008020 выдано 14.08.13г. </br>
+                          
+                          Банковские реквизиты: ДБ АО Сбербанк в г. Павлодар </br>
+                          
+                          БИК SABRKZKA, расчетный счет KZT  KZ81914072203KZ0090F -->
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>
